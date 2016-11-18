@@ -35,23 +35,46 @@ app.get('/',(req, res)=>{
     //res.send('Hello Express');
         res.render('home.hbs', {
             welcomeText: 'Welcome to the dummy site',
-            pageTitle: 'Home'
+            pageTitle: 'Home',
+            subHeading: 'Welcome'
         });
         
 });
 
 app.get('/about', (req, res)=>{
     res.render('about.hbs', {
-        pageTitle: 'About Us'
+        pageTitle: 'About Us',
+        subHeading: 'Experience'
+
+    });
+});
+
+app.get('/portfolio', (req, res)=>{
+    res.render('portfolio.hbs', {
+        pageTitle: 'Portfolio',
+        subHeading: 'Current Projects'
+
+    });
+});
+
+app.get('/contact', (req, res)=>{
+    res.render('contact.hbs', {
+        pageTitle: 'Contact Us',
+        subHeading: 'Anytime!'
 
     });
 });
 
 app.get('/bad',(req, res)=>{
     //res.send('Hello Express');
-    res.send({
-        errorMessage: '<h1>404</h1>: The page rquested do not exists.',
+    // res.send({
+    //     errorMessage: '<h1>404</h1>: The page rquested do not exists.',
         
+    // });
+    res.render('404.hbs', {
+        pageTitle: '404',
+        subHeading: 'Page not found!'
+
     });
 });
 
